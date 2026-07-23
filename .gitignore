@@ -1,0 +1,15 @@
+# Compiled binaries
+*.exe
+*.out
+*.o
+*.obj
+
+# GnuCOBOL build artifacts
+*.so
+*.dll
+*.dylib
+*.lst
+
+# OS files
+.DS_Store
+Thumbs.db
