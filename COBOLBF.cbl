@@ -8,14 +8,16 @@
            01 WS-TAPE           OCCURS 100 TIMES.
                05 WS-TAPE-CELL  PIC 999.
            01 WS-DATA-POINTER   PIC 999     VALUE 1.
-           01 WS-SOURCE-CODE    PIC X(100)  VALUE
-               "+++++++++++++++><++++++++++++++++++.".
+           01 WS-SOURCE-CODE    PIC X(1000)  VALUE
+               "++++++++++++><+++++++++++++++++++++++++++++++++++++++" &
+               "+++><++++++++++++++++++" &
+               ">+++++++++++++++++++++++++++++++++<.>.".
 
            PROCEDURE DIVISION.
 
            PERFORM VARYING WS-CODE-INDEX FROM 1 BY 1 UNTIL
                WS-SOURCE-CODE(WS-CODE-INDEX:1) = SPACE
-               OR WS-CODE-INDEX > 100
+               OR WS-CODE-INDEX > 1000
 
                EVALUATE WS-SOURCE-CODE(WS-CODE-INDEX:1)
                    WHEN "+"
@@ -25,6 +27,7 @@
                    WHEN "."
                        DISPLAY FUNCTION CHAR
                            (WS-TAPE-CELL (WS-DATA-POINTER) + 1)
+                           WITH NO ADVANCING
                    WHEN ">"
                        ADD 1 TO WS-DATA-POINTER
                    WHEN "<"
