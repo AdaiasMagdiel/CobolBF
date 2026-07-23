@@ -12,9 +12,9 @@ Current support for Brainfuck commands:
 | Command | Description                        | Implemented |
 |---------|-------------------------------------|:-----------:|
 | `+`     | Increment the current cell          | ✅          |
-| `-`     | Decrement the current cell          | ❌          |
-| `>`     | Move the pointer right              | ❌          |
-| `<`     | Move the pointer left               | ❌          |
+| `-`     | Decrement the current cell          | ✅          |
+| `>`     | Move the pointer right              | ✅          |
+| `<`     | Move the pointer left               | ✅          |
 | `.`     | Output the current cell as a char   | ✅          |
 | `,`     | Read a character of input           | ❌          |
 | `[` `]` | Loop (while cell != 0)              | ❌          |

@@ -20,6 +20,8 @@
                EVALUATE WS-SOURCE-CODE(WS-CODE-INDEX:1)
                    WHEN "+"
                        ADD 1 TO WS-TAPE-CELL (WS-DATA-POINTER)
+                   WHEN "-"
+                       SUBTRACT 1 FROM WS-TAPE-CELL (WS-DATA-POINTER)
                    WHEN "."
                        DISPLAY FUNCTION CHAR
                            (WS-TAPE-CELL (WS-DATA-POINTER) + 1)
