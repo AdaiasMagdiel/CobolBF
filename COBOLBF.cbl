@@ -9,7 +9,7 @@
                05 WS-TAPE-CELL  PIC 999.
            01 WS-DATA-POINTER   PIC 999     VALUE 1.
            01 WS-SOURCE-CODE    PIC X(100)  VALUE
-               "+++++++++++++++++++++++++++++++++.".
+               "+++++++++++++++><++++++++++++++++++.".
 
            PROCEDURE DIVISION.
 
@@ -23,6 +23,10 @@
                    WHEN "."
                        DISPLAY FUNCTION CHAR
                            (WS-TAPE-CELL (WS-DATA-POINTER) + 1)
+                   WHEN ">"
+                       ADD 1 TO WS-DATA-POINTER
+                   WHEN "<"
+                       SUBTRACT 1 FROM WS-DATA-POINTER
                END-EVALUATE
 
            END-PERFORM.
